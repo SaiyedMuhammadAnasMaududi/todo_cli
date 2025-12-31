@@ -208,3 +208,10 @@ Wait for consent; never auto-create ADRs. Group related decisions (stacks, authe
 
 ## Code Standards
 See `.specify/memory/constitution.md` for code quality, testing, performance, security, and architecture principles.
+
+## Active Technologies
+- Python 3.13+ + None (only standard library; UV for environment management) (001-cli-todo-app)
+- JSON file in user home directory or application directory (001-cli-todo-app)
+
+## Recent Changes
+- 001-cli-todo-app: Added Python 3.13+ + None (only standard library; UV for environment management)
