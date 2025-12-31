@@ -23,39 +23,54 @@ A clean, reliable command-line todo application demonstrating all basic CRUD ope
 1. Clone or download the repository
 2. Install UV (if not already installed):
    ```bash
-   pip install uv
+   curl -LsSf https://astral.sh/uv/install.sh | sh
+   # Or on Windows: powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
+   # Or with pip: pip install uv
    ```
 
-3. Create and activate virtual environment:
-   ```bash
-   uv venv
-   source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-   ```
+3. UV will automatically manage the virtual environment - no manual setup needed!
 
 ### Usage
 
+**Interactive Mode (Recommended for beginners):**
+```bash
+uv run todo-cli
+```
+
+**Command-line Mode:**
 ```bash
 # Add a task
-python src/main.py add --title "Buy groceries" --description "Milk, eggs, bread"
+uv run todo-cli add --title "Buy groceries" --description "Milk, eggs, bread"
 
 # List all tasks
-python src/main.py list
+uv run todo-cli list
 
 # Update a task
-python src/main.py update --id 1 --title "Buy groceries (urgent)"
+uv run todo-cli update --id 1 --title "Buy groceries (urgent)"
 
 # Mark task as complete
-python src/main.py complete --id 1
+uv run todo-cli complete --id 1
 
 # Mark task as incomplete
-python src/main.py incomplete --id 1
+uv run todo-cli incomplete --id 1
 
 # Delete a task
-python src/main.py delete --id 1
+uv run todo-cli delete --id 1
 
 # Get help
-python src/main.py --help
-python src/main.py add --help
+uv run todo-cli --help
+uv run todo-cli add --help
+```
+
+**Alternative (without UV):**
+```bash
+# Create virtual environment
+python3 -m venv .venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+
+# Run directly
+python3 -m src.main list
+python3 -m src.main add --title "Task"
 ```
 
 ## Data Storage
